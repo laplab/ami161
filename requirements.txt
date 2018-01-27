@@ -1,0 +1,2 @@
+Markdown==2.6.9
+django-markupfield==1.4.3

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Материалы</h2>
+
+    <div class="card-columns">
+    {% for material in materials %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ material.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ material.subject.name }}</h6>
+                <p class="card-text">{{ material.text.rendered | safe }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

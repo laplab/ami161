@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul class="list-group list-group-flush mb-3">
+    {% for material in pinned_materials %}
+        <li class="list-group-item">
+            <h5><i class="fa fa-thumb-tack" aria-hidden="true"></i> {{ material.title }}</h5>
+            {{ material.text.rendered | safe }}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h3>Текущие дедлайны</h3>
+
+    <div class="card-columns">
+    {% for deadline in deadlines %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ deadline.title }}</h5>
+                <h6 class="card-subtitle mb-2"><span class="badge badge-secondary">{{ deadline.subject.name }}</span></h6>
+                <p class="car -  text">{{ deadline.text.rendered | safe }}</p>
+                <p class="card-text"><small class="text-muted">{{ deadline.date|date:"m.d.Y H:i" }}</small> <span class="badge badge-light"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ deadline.date|timeuntil }}</span></p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
