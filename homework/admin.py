@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import Subject, Material, Deadline
+from .models import File, Subject, Material, Deadline
 
-admin.site.register([Subject, Material, Deadline])
+admin.site.register([File, Subject, Material, Deadline])
