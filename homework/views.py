@@ -3,10 +3,10 @@ from .models import Material, Deadline
 from django.utils import timezone
 
 
-def index(request):
+def deadlines(request):
     pinned_materials = Material.objects.filter(pinned=True)
     deadlines = Deadline.objects.filter(date__gte=timezone.now()).order_by('date')
-    return render(request, 'index.html', {
+    return render(request, 'deadlines.html', {
         'pinned_materials': pinned_materials,
         'deadlines': deadlines
     })
