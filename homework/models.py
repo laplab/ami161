@@ -69,7 +69,7 @@ class Subject(models.Model):
 
 class Material(models.Model):
     title = models.CharField(max_length=200, verbose_name='title')
-    text = MarkupField(default_markup_type='markdown', verbose_name='name')
+    text = MarkupField(default_markup_type='markdown', verbose_name='text')
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 
@@ -83,7 +83,7 @@ class Deadline(models.Model):
     date = models.DateTimeField(verbose_name='date')
 
     title = models.CharField(max_length=200, verbose_name='title')
-    text = MarkupField(default_markup_type='markdown', verbose_name='name')
+    text = MarkupField(default_markup_type='markdown', verbose_name='text')
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 

@@ -14,16 +14,18 @@
 
     <h3>Текущие дедлайны</h3>
 
-    <div class="card-columns">
-    {% for deadline in deadlines %}
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ deadline.title }}</h5>
-                <h6 class="card-subtitle mb-2"><span class="badge badge-secondary">{{ deadline.subject.name }}</span></h6>
-                <p class="car -  text">{{ deadline.text.rendered | safe }}</p>
-                <p class="card-text"><small class="text-muted">{{ deadline.date|date:"m.d.Y H:i" }}</small> <span class="badge badge-light"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ deadline.date|timeuntil }}</span></p>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
+    <table class="table">
+        <tbody>
+        {% for deadline in deadlines %}
+            <tr>
+                <td>
+                    <h5 class="card-title">{{ deadline.title }}</h5>
+                    <h6 class="card-subtitle mb-2"><span class="badge badge-secondary">{{ deadline.subject.name }}</span></h6>
+                    <small class="text-muted">{{ deadline.date|date:"d.m.Y H:i" }}</small> <span class="badge badge-light"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ deadline.date|timeuntil }}</span>
+                </td>
+                <td>{{ deadline.text.rendered | safe }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
