@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        body {
+            -ms-word-break: break-all;
+            word-break: break-all;
+            word-break: break-word;
+
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+        }
+
         p {
             margin: 0;
         }
@@ -15,6 +25,8 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">ami161</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationbar" aria-controls="navigationbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,6 +35,10 @@
                 <a class="nav-item nav-link" href="{% url 'deadlines' %}">Домашки</a>
                 <a class="nav-item nav-link" href="{% url 'materials' %}">Материалы</a>
                 <a class="nav-item nav-link" href="{% url 'exams' %}">Экзамены</a>
+            </div>
+
+            <div class="navbar-nav ml-auto">
+                <a class="btn btn-sm btn-outline-secondary" href="/admin">Админка</a>
             </div>
         </div>
     </nav>
