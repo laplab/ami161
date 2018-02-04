@@ -1,3 +1,5 @@
+{% load homework_extras %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,9 +34,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navigationbar">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{% url 'deadlines' %}">Домашки</a>
-                <a class="nav-item nav-link" href="{% url 'materials' %}">Материалы</a>
-                <a class="nav-item nav-link" href="{% url 'exams' %}">Экзамены</a>
+                <a class="nav-item nav-link {% active_url 'deadlines' %}" href="{% url 'deadlines' %}">Домашки</a>
+                <a class="nav-item nav-link {% active_url 'materials' %}" href="{% url 'materials' %}">Материалы</a>
+                <a class="nav-item nav-link {% active_url 'exams' %}" href="{% url 'exams' %}">Экзамены</a>
             </div>
 
             <div class="navbar-nav ml-auto">
