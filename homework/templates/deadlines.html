@@ -28,4 +28,22 @@
         {% endfor %}
         </tbody>
     </table>
+
+    <h3>Старые дедлайны</h3>
+
+    <table class="table text-secondary">
+        <tbody>
+        {% for deadline in old_deadlines %}
+            <tr>
+                <td>
+                    <h5 class="card-title">{{ deadline.title }}</h5>
+                    <h6 class="card-subtitle mb-2"><span class="badge badge-secondary">{{ deadline.subject.name }}</span></h6>
+                    <small class="text-muted">{{ deadline.date|date:"d.m.Y H:i" }}</small> <span class="badge badge-light"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ deadline.date|timeuntil }}</span>
+                </td>
+                <td>{{ deadline.text.rendered | safe }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}

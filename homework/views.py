@@ -6,9 +6,11 @@ from django.utils import timezone
 def deadlines(request):
     pinned_materials = Material.objects.filter(pinned=True)
     deadlines = Deadline.objects.filter(date__gte=timezone.now()).order_by('date')
+    old_deadlines = Deadline.objects.filter(date__lt=timezone.now()).order_by('date')
     return render(request, 'deadlines.html', {
         'pinned_materials': pinned_materials,
-        'deadlines': deadlines
+        'deadlines': deadlines,
+        'old_deadlines': old_deadlines
     })
 
 
