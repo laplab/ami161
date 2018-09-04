@@ -77,8 +77,9 @@ WSGI_APPLICATION = 'ami161.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-with open('../settings/mysql.txt') as f:
-    MYSQL_NAME, MYSQL_USER, MYSQL_PWD = f.read().strip().split(':')
+MYSQL_NAME = os.environ.get('AMI_MYSQL_NAME', 'ami')
+MYSQL_USER = os.environ.get('AMI_MYSQL_USER', 'ami')
+MYSQL_PWD = os.environ.get('AMI_MYSQL_PWD', 'ami')
 
 DATABASES = {
     'default': {
