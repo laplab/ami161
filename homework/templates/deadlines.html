@@ -19,8 +19,7 @@
         {% for deadline in deadlines %}
             <tr>
                 <td>
-                    <h5 class="card-title">{{ deadline.title }}</h5>
-                    <h6 class="card-subtitle mb-2"><span class="badge badge-secondary">{{ deadline.subject.name }}</span></h6>
+                    <h5 class="card-title"><span class="badge badge-secondary">{{ deadline.subject.name }}</span> {{ deadline.title }}</h5>
                     <small class="text-muted">{{ deadline.date|date:"d.m.Y H:i" }}</small> <span class="badge badge-light"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ deadline.date|timeuntil }}</span>
                 </td>
                 <td>{{ deadline.text.rendered | safe }}</td>
