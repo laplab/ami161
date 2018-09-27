@@ -20,7 +20,7 @@
             <tr>
                 <td>
                     <h5 class="card-title"><span class="badge badge-secondary">{{ deadline.subject.name }}</span> {{ deadline.title }}</h5>
-                    <small class="text-muted">{{ deadline.date|date:"d.m.Y H:i" }}</small> <span class="badge badge-light"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ deadline.date|timeuntil }}</span>
+                    <small class="text-muted">{{ deadline.date|date:"D d.m.Y H:i" }}</small> <span class="badge badge-light"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ deadline.date|timeuntil }}</span>
                 </td>
                 <td>{{ deadline.text.rendered | safe }}</td>
             </tr>
