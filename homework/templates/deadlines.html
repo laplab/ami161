@@ -37,7 +37,7 @@
                 <td>
                     <h5 class="card-title">{{ deadline.title }}</h5>
                     <h6 class="card-subtitle mb-2"><span class="badge badge-secondary">{{ deadline.subject.name }}</span></h6>
-                    <small class="text-muted">{{ deadline.date|date:"d.m.Y H:i" }}</small>
+                    <small class="text-muted">{{ deadline.date|date:"D, d.m.Y H:i" }}</small>
                 </td>
                 <td>{{ deadline.text.rendered | safe }}</td>
             </tr>
